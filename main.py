@@ -1,7 +1,6 @@
-import os
+import asyncio, logging
 from config import Config
 from pyrogram import Client as VJ, idle
-import asyncio, logging
 from typing import Union, Optional, AsyncGenerator
 from logging.handlers import RotatingFileHandler
 from plugins.regix import restart_forwards
