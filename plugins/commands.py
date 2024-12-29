@@ -1,3 +1,7 @@
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
 import os
 import sys
 import asyncio 
@@ -11,6 +15,10 @@ import time as time
 from os import environ, execle, system
 
 START_TIME = time.time()
+
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 main_buttons = [[
     InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/kingvj01')
@@ -26,7 +34,9 @@ main_buttons = [[
     InlineKeyboardButton('⚙ sᴇᴛᴛɪɴɢs', callback_data='settings#main')
 ]]
 
-#===================Start Function=========================#
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.private & filters.command(['start']))
 async def start(client, message):
@@ -39,7 +49,9 @@ async def start(client, message):
         reply_markup=reply_markup,
         text=Script.START_TXT.format(message.from_user.first_name))
 
-#==================Restart Function==================#
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_message(filters.private & filters.command(['restart']) & filters.user(Config.BOT_OWNER))
 async def restart(client, message):
@@ -49,7 +61,9 @@ async def restart(client, message):
     system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
     execle(sys.executable, sys.executable, "main.py", environ)
 
-#==================Callback Functions==================#
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_callback_query(filters.regex(r'^help'))
 async def helpcb(bot, query):
@@ -64,6 +78,10 @@ async def helpcb(bot, query):
     reply_markup = InlineKeyboardMarkup(buttons)
     await query.message.edit_text(text=Script.HELP_TXT, reply_markup=reply_markup)
 
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
 @Client.on_callback_query(filters.regex(r'^how_to_use'))
 async def how_to_use(bot, query):
     buttons = [[InlineKeyboardButton('• back', callback_data='help')]]
@@ -74,12 +92,20 @@ async def how_to_use(bot, query):
         disable_web_page_preview=True
     )
 
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
+
 @Client.on_callback_query(filters.regex(r'^back'))
 async def back(bot, query):
     reply_markup = InlineKeyboardMarkup(main_buttons)
     await query.message.edit_text(
        reply_markup=reply_markup,
        text=Script.START_TXT.format(query.from_user.first_name))
+
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
@@ -91,8 +117,12 @@ async def about(bot, query):
     await query.message.edit_text(
         text=Script.ABOUT_TXT,
         reply_markup=reply_markup,
-        disable_web_page_preview=True,
+        disable_web_page_preview=True
     )
+
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_callback_query(filters.regex(r'^status'))
 async def status(bot, query):
@@ -110,6 +140,9 @@ async def status(bot, query):
         disable_web_page_preview=True,
     )
 
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 @Client.on_callback_query(filters.regex(r'^systm_sts'))
 async def sys_status(bot, query):
@@ -138,6 +171,9 @@ async def sys_status(bot, query):
         disable_web_page_preview=True,
     )
 
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
 
 async def get_bot_uptime(start_time):
     # Calculate the uptime in seconds
@@ -153,3 +189,7 @@ async def get_bot_uptime(start_time):
         uptime_string += f" {uptime_minutes % 60}M"
     uptime_string += f" {uptime_seconds % 60} Sec"
     return uptime_string   
+
+# Don't Remove Credit Tg - @VJ_Botz
+# Subscribe YouTube Channel For Amazing Bot https://youtube.com/@Tech_VJ
+# Ask Doubt on telegram @KingVJ01
