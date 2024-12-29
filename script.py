@@ -14,10 +14,12 @@ class  Script(object):
 <b>⏣ __/start - check I'm alive__ 
 ⏣ __/forward - forward messages__
 ⏣ __/settings - configure your settings__
-⏣ __ /unequify - delete duplicate media messages in chats__</b>
+⏣ __ /unequify - delete duplicate media messages in chats__
+⏣ __ /stop - stop your ongoing tasks__
+⏣ __ /reset - reset your settings__</b>
 
 <b><u>💢 Features:</b></u>
-<b>► __Forward message from public channel to your channel without admin permission. if the channel is private need admin permission__
+<b>► __Forward message from public channel to your channel without admin permission. if the channel is private need admin permission, if you can't give admin permission then use userbot, but in userbot there is a chance to get your account ban so use fake account__
 ► __custom caption__
 ► __custom button__
 ► __skip duplicate messages__
