@@ -28,12 +28,11 @@ reset - reset your settings
 
 ## Variables
 
+* `API_ID` API Id from my.telegram.org
 * `API_HASH` API Hash from my.telegram.org
-* `API_ID` API ID from my.telegram.org
 * `BOT_TOKEN` Bot token from @BotFather
-* `BOT_OWNER_ID` Telegram Id of Owner.
-* `DATABASE_URI` Database uri from [MongoDB](https://mongodb.com)
-* `DATABASE_NAME` Database Cluster name
+* `BOT_OWNER` Telegram Account Id of Owner.
+* `DATABASE_URI` Database uri from [MongoDB](https://mongodb.com) Watch [Video Tutorial](https://youtu.be/DAHRmFdw99o)
 
 ## Credits
 
