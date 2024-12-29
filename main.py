@@ -1,42 +1,21 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-# (c) ACE 
-
 import os
 from config import Config
-import subprocess
-from pyrogram import Client as ACE , idle
+from pyrogram import Client as VJ, idle
 import asyncio, logging
-import tgcrypto
-from pyromod import listen
 from typing import Union, Optional, AsyncGenerator
 from logging.handlers import RotatingFileHandler
 from plugins.regix import restart_forwards
-import signal
 
-RESATRT = True
 
-# Auth Users
-BOT_OWNER_ID = [ int(chat) for chat in Config.BOT_OWNER_ID.split(",") if chat != '']
-
-# Prefixes 
-prefixes = ["/", "~", "?", "!"]
-
-def restart_bot():
-    os.kill(os.getpid(), signal.SIGTERM)
-    
-
-plugins = dict(root="plugins")
-if __name__ == "__main__" :
-    AceBot = ACE(
-        "AceBot",
+if __name__ == "__main__":
+    VJBot = VJ(
+        "VJ-Forward-Bot",
         bot_token=Config.BOT_TOKEN,
         api_id=Config.API_ID,
         api_hash=Config.API_HASH,
         sleep_threshold=120,
-        plugins=plugins
-    )
-    
+        plugins=dict(root="plugins")
+    )  
     async def iter_messages(
         self,
         chat_id: Union[int, str],
@@ -77,17 +56,10 @@ if __name__ == "__main__" :
                 current += 1
                
     async def main():
-        await AceBot.start()
-        bot_info  = await AceBot.get_me()
-        #LOGGER.info(f"<--- @{bot_info.username} Started (c) ACE --->")
-        if RESATRT:
-            await restart_forwards(AceBot)
+        await VJBot.start()
+        bot_info  = await VJBot.get_me()
+        await restart_forwards(VJBot)
+        print("Bot Started.")
         await idle()
 
     asyncio.get_event_loop().run_until_complete(main())
-    #LOGGER.info(f"<---Bot Stopped-->")
-
-    # Check Heroku logs for "Error R14 (Memory quota exceeded)"
-    heroku_logs = subprocess.run(["heroku", "logs", "--tail"], capture_output=True, text=True)
-    if "Error R14 (Memory quota exceeded)" in heroku_logs.stdout:
-        subprocess.run(["heroku", "restart"])  # Restart the bot process on Heroku
