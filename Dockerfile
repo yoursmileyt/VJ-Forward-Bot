@@ -8,4 +8,4 @@ RUN cd /
 RUN pip3 install -U pip && pip3 install -U -r requirements.txt
 RUN mkdir /VJ-Forward-Bot
 WORKDIR /VJ-Forward-Bot
-CMD python3 bot.py
+CMD python3 main.py
