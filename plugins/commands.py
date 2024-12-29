@@ -41,7 +41,7 @@ async def start(client, message):
 
 #==================Restart Function==================#
 
-@Client.on_message(filters.private & filters.command(['restart']) & filters.user(1957296068))
+@Client.on_message(filters.private & filters.command(['restart']) & filters.user(Config.BOT_OWNER))
 async def restart(client, message):
     msg = await message.reply_text(text="<i>Trying to restarting.....</i>")
     await asyncio.sleep(5)
