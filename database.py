@@ -1,4 +1,3 @@
-from os import environ
 import motor.motor_asyncio
 from config import Config
 
