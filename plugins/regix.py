@@ -579,7 +579,6 @@ async def restart_forwards(client):
     random_seconds = random.randint(0, 300)
     minutes = random_seconds // 60
     seconds = random_seconds % 60
-   # await client.send_message(chat_id="MLZ_BOTZ_SUPPORT", text=f"**Bot Restarted🎉**\n\n<b>Time Taken:  {minutes}:{seconds} Min</b>\n<b>Restarting<i> {count} </i>Forwards..🔥</b>")
     await asyncio.gather(*tasks)
     print('Done')
 
