@@ -25,6 +25,7 @@ settings - configure your settings
 stop - stop your ongoing tasks
 reset - reset your settings
 restart - restart server (owner only)
+resetall - reset all users settings (owner only)
 broadcast - broadcast a message to all your users (owner only)
 ```
 
