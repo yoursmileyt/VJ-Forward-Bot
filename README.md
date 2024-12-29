@@ -24,6 +24,8 @@ unequify - delete duplicate media messages in chats
 settings - configure your settings
 stop - stop your ongoing tasks
 reset - reset your settings
+restart - restart server (owner only)
+broadcast - broadcast a message to all your users (owner only)
 ```
 
 ## Variables
