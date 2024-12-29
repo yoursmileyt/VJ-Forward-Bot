@@ -13,17 +13,17 @@ from os import environ, execle, system
 START_TIME = time.time()
 
 main_buttons = [[
-        InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/kingvj01')
-        ],[
-        InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
-        InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
-        ],[
-        InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
-        ],[
-        InlineKeyboardButton('👨‍💻 ʜᴇʟᴘ', callback_data='help'),
-        InlineKeyboardButton('💁 ᴀʙᴏᴜᴛ', callback_data='about')
-        ],[
-        InlineKeyboardButton('⚙ sᴇᴛᴛɪɴɢs', callback_data='settings#main')
+    InlineKeyboardButton('❣️ ᴅᴇᴠᴇʟᴏᴘᴇʀ ❣️', url='https://t.me/kingvj01')
+],[
+    InlineKeyboardButton('🔍 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ', url='https://t.me/vj_bot_disscussion'),
+    InlineKeyboardButton('🤖 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ', url='https://t.me/vj_botz')
+],[
+    InlineKeyboardButton('💝 sᴜʙsᴄʀɪʙᴇ ᴍʏ ʏᴏᴜᴛᴜʙᴇ ᴄʜᴀɴɴᴇʟ', url='https://youtube.com/@Tech_VJ')
+],[
+    InlineKeyboardButton('👨‍💻 ʜᴇʟᴘ', callback_data='help'),
+    InlineKeyboardButton('💁 ᴀʙᴏᴜᴛ', callback_data='about')
+],[
+    InlineKeyboardButton('⚙ sᴇᴛᴛɪɴɢs', callback_data='settings#main')
 ]]
 
 #===================Start Function=========================#
@@ -32,21 +32,18 @@ main_buttons = [[
 async def start(client, message):
     user = message.from_user
     if not await db.is_user_exist(user.id):
-      await db.add_user(user.id, user.first_name)
+        await db.add_user(user.id, user.first_name)
     reply_markup = InlineKeyboardMarkup(main_buttons)
     await client.send_message(
         chat_id=message.chat.id,
         reply_markup=reply_markup,
-        text=Script.START_TXT.format(
-                message.from_user.first_name))
+        text=Script.START_TXT.format(message.from_user.first_name))
 
 #==================Restart Function==================#
 
 @Client.on_message(filters.private & filters.command(['restart']) & filters.user(1957296068))
 async def restart(client, message):
-    msg = await message.reply_text(
-        text="<i>Trying to restarting.....</i>"
-    )
+    msg = await message.reply_text(text="<i>Trying to restarting.....</i>")
     await asyncio.sleep(5)
     await msg.edit("<i>Server restarted successfully ✅</i>")
     system("git pull -f && pip3 install --no-cache-dir -r requirements.txt")
@@ -57,18 +54,15 @@ async def restart(client, message):
 @Client.on_callback_query(filters.regex(r'^help'))
 async def helpcb(bot, query):
     buttons = [[
-            ],[
-            InlineKeyboardButton('🤔 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❓', callback_data='how_to_use')
-            ],[
-            InlineKeyboardButton('Aʙᴏᴜᴛ ✨️', callback_data='about'),
-            InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='settings#main')
-            ],[
-            InlineKeyboardButton('• back', callback_data='back')
+        InlineKeyboardButton('🤔 ʜᴏᴡ ᴛᴏ ᴜsᴇ ᴍᴇ ❓', callback_data='how_to_use')
+    ],[
+        InlineKeyboardButton('Aʙᴏᴜᴛ ✨️', callback_data='about'),
+        InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='settings#main')
+    ],[
+        InlineKeyboardButton('• back', callback_data='back')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await query.message.edit_text(
-        text=Script.HELP_TXT,
-        reply_markup=reply_markup)
+    await query.message.edit_text(text=Script.HELP_TXT, reply_markup=reply_markup)
 
 @Client.on_callback_query(filters.regex(r'^how_to_use'))
 async def how_to_use(bot, query):
@@ -85,8 +79,7 @@ async def back(bot, query):
     reply_markup = InlineKeyboardMarkup(main_buttons)
     await query.message.edit_text(
        reply_markup=reply_markup,
-       text=Script.START_TXT.format(
-                query.from_user.first_name))
+       text=Script.START_TXT.format(query.from_user.first_name))
 
 @Client.on_callback_query(filters.regex(r'^about'))
 async def about(bot, query):
