@@ -4,6 +4,8 @@
 
 ![Typing SVG](https://readme-typing-svg.herokuapp.com/?lines=Welcome+To+VJ+Forward+Bot+!)
 
+## How To Deploy [Video Tutorial](https://youtu.be/A-iIh_5WAlk)
+
 ## Features
 
 - [x] Public Forward (Bot)
